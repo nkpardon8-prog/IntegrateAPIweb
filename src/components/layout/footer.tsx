@@ -21,6 +21,9 @@ export function Footer() {
               <Link href="/contact" className="text-sm text-muted hover:text-foreground transition-colors">
                 Contact
               </Link>
+              <Link href="/compliance" className="text-sm text-muted hover:text-foreground transition-colors">
+                Compliance
+              </Link>
             </div>
           </div>
 

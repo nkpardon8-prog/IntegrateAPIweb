@@ -70,7 +70,7 @@ export const caseStudies: CaseStudy[] = [
     solution:
       "Built a client intake and matter management system with automated document generation, deadline tracking, and billing summaries, scoped to how the firm actually practices.",
     outcome:
-      "New matter setup time cut dramatically. Attorneys spend more time on cases, less on admin. Missed deadlines become harder to hit.",
+      "New matter setup time cut dramatically. Attorneys spend more time on cases, less on admin. Built to the firm's data-handling rules — matter data stays inside the controls the firm already runs.",
     metric: "Faster intake",
   },
   {

@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { Bot, Code2, TrendingUp, Cog, Phone, Globe, GraduationCap, RefreshCw, ArrowRight } from 'lucide-react'
 import { services } from '@/data/services'
 import { FadeIn } from '@/components/motion/fade-in'
+import { AgentAnatomySection } from '@/components/sections/agent-anatomy-section'
 import type { LucideIcon } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -39,6 +40,34 @@ export default function WhatWeDoPage() {
               We don&apos;t sell software. We build what your business actually needs.
             </p>
           </FadeIn>
+        </div>
+      </section>
+
+      {/* Agent anatomy diagram */}
+      <AgentAnatomySection
+        title="Anatomy of an agent."
+        subtitle="Every AI system we build breaks down into the same five parts."
+      />
+
+      {/* Compliance callout band */}
+      <section className="py-12 border-y border-border bg-card">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-start md:items-center gap-4 md:justify-between">
+          <div>
+            <p className="text-sm font-medium text-foreground mb-1">
+              Built inside your audit posture.
+            </p>
+            <p className="text-sm text-muted max-w-2xl">
+              Our processes can be HIPAA- and SOC 2-compliant when the engagement requires it. We
+              build into your controls, not ours.
+            </p>
+          </div>
+          <Link
+            href="/compliance"
+            className="inline-flex items-center gap-2 text-accent hover:text-accent-hover text-sm font-medium transition-colors flex-shrink-0"
+          >
+            How we handle sensitive data
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </section>
 
