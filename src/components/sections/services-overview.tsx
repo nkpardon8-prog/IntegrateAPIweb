@@ -1,7 +1,16 @@
 import Link from 'next/link'
+import type { ComponentType } from 'react'
 import { Bot, Code2, TrendingUp, Cog, Phone, Globe, GraduationCap, RefreshCw, ArrowRight, LucideIcon } from 'lucide-react'
 import { services } from '@/data/services'
 import { FadeIn } from '@/components/motion/fade-in'
+import { AiAgentSystemsGraphic } from '@/components/graphics/services/ai-agent-systems'
+import { CustomSoftwareCrmGraphic } from '@/components/graphics/services/custom-software-crm'
+import { AutomatedSalesPipelinesGraphic } from '@/components/graphics/services/automated-sales-pipelines'
+import { BackOfficeAutomationGraphic } from '@/components/graphics/services/back-office-automation'
+import { AiPhoneSystemsGraphic } from '@/components/graphics/services/ai-phone-systems'
+import { WebsitesDigitalPresenceGraphic } from '@/components/graphics/services/websites-digital-presence'
+import { StaffTrainingAiAdoptionGraphic } from '@/components/graphics/services/staff-training-ai-adoption'
+import { SystemMaintenanceEvolutionGraphic } from '@/components/graphics/services/system-maintenance-evolution'
 
 const iconMap: Record<string, LucideIcon> = {
   Bot,
@@ -12,6 +21,17 @@ const iconMap: Record<string, LucideIcon> = {
   Globe,
   GraduationCap,
   RefreshCw,
+}
+
+const graphicMap: Record<string, ComponentType> = {
+  'ai-agent-systems': AiAgentSystemsGraphic,
+  'custom-software-crm': CustomSoftwareCrmGraphic,
+  'automated-sales-pipelines': AutomatedSalesPipelinesGraphic,
+  'back-office-automation': BackOfficeAutomationGraphic,
+  'ai-phone-systems': AiPhoneSystemsGraphic,
+  'websites-digital-presence': WebsitesDigitalPresenceGraphic,
+  'staff-training-ai-adoption': StaffTrainingAiAdoptionGraphic,
+  'system-maintenance-evolution': SystemMaintenanceEvolutionGraphic,
 }
 
 export function ServicesOverview() {
@@ -27,10 +47,17 @@ export function ServicesOverview() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {services.map((service, i) => {
             const Icon = iconMap[service.icon]
+            const Graphic = graphicMap[service.id]
             return (
               <FadeIn key={service.id} delay={i * 0.05}>
                 <div className="bg-background border border-border rounded-xl p-6 h-full">
-                  {Icon && <Icon className="w-7 h-7 text-accent mb-3" />}
+                  {Graphic ? (
+                    <div className="text-accent mb-4">
+                      <Graphic />
+                    </div>
+                  ) : (
+                    Icon && <Icon className="w-7 h-7 text-accent mb-3" />
+                  )}
                   <h3 className="text-foreground font-semibold mb-2 text-sm sm:text-base">{service.title}</h3>
                   <p className="text-muted text-sm leading-relaxed">{service.description}</p>
                 </div>

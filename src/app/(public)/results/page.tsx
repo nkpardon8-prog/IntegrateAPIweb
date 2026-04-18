@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
 import { caseStudies } from '@/data/case-studies'
 import { FadeIn } from '@/components/motion/fade-in'
@@ -37,6 +38,17 @@ export default function ResultsPage() {
             {caseStudies.map((cs, i) => (
               <FadeIn key={cs.id} delay={i * 0.08}>
                 <div className="bg-card border border-border rounded-xl p-8">
+                  {cs.image && (
+                    <div className="relative aspect-[16/10] bg-background/50 mb-6 rounded-xl overflow-hidden">
+                      <Image
+                        src={cs.image}
+                        alt={`${cs.industry} — ${cs.metric}`}
+                        fill
+                        sizes="(min-width: 1024px) 66vw, 100vw"
+                        className="object-cover object-top"
+                      />
+                    </div>
+                  )}
                   {/* Top row: badge + metric */}
                   <div className="flex items-start justify-between gap-4 mb-8 flex-wrap">
                     <span className="bg-accent/20 text-accent text-xs px-3 py-1 rounded-full font-medium">

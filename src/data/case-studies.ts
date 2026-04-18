@@ -6,44 +6,48 @@ export interface CaseStudy {
   solution: string
   outcome: string
   metric: string
+  image?: string
 }
 
 export const caseStudies: CaseStudy[] = [
   {
     id: "property-management",
-    industry: "Property Management",
-    badge: "Property Mgmt",
+    industry: "B2B Outreach Platform",
+    badge: "3x pipeline growth",
     problem:
-      "Tenant communications, maintenance requests, lease tracking, and lead outreach were scattered across email, texts, spreadsheets, and three disconnected tools. Nothing talked to anything else.",
+      "Limited capacity for client outreach meant missed opportunities to grow the book. The team was stretched thin and couldn't both serve clients and prospect.",
     solution:
-      "Built a custom property management and CRM platform. Tenant communications, maintenance workflows, lease tracking, and automated outreach sequences all live in one system built around the way the team actually works.",
+      "A custom CRM that surfaces the hottest leads automatically, runs outreach sequences on autopilot, and gives the team a single pipeline view. Built from the ground up around the actual workflow.",
     outcome:
-      "Operations run from one dashboard. Outreach runs 24/7. Time that used to go into managing software now goes into managing properties.",
-    metric: "1 unified platform",
+      "Pipeline grew systematically without new hires. Outreach runs on autopilot. The team spends their time in meetings, not chasing leads.",
+    metric: "3x pipeline growth",
+    image: "/images/products/connect-crm-dashboard.png",
   },
   {
     id: "construction",
-    industry: "Construction",
-    badge: "Construction",
+    industry: "Service Business Ops",
+    badge: "1 unified platform",
     problem:
-      "Job costing, crew scheduling, and change orders lived on paper, whiteboards, and spreadsheets. The office spent more time chasing information than running projects.",
+      "Client communications, enrollment tracking, scheduling, and lead outreach were scattered across email, texts, spreadsheets, and three disconnected tools.",
     solution:
-      "Built project management and job costing software tailored to the company's workflow. Materials, labor, schedules, and change orders tracked together, tied to live budget and margin.",
+      "One dashboard that handles client management, recurring-enrollment tracking, follow-up scheduling, and outreach — all tied into a single source of truth. Custom-fit to the business's actual workflow.",
     outcome:
-      "Margins visible in real time. Billing cycles shortened. Admin hours spent on tracking dropped meaningfully.",
-    metric: "Live job visibility",
+      "Operations run from one dashboard. Outreach runs 24/7. Time that used to go into managing software now goes into running the business.",
+    metric: "1 unified platform",
+    image: "/images/products/service-business-dashboard.png",
   },
   {
     id: "wealth-management",
-    industry: "Wealth Management",
-    badge: "Financial Advisory",
+    industry: "Dental Practice Management",
+    badge: "Unified admin",
     problem:
-      "Limited capacity for client outreach meant missed opportunities to grow the book. Advisors were stretched thin and couldn't both serve clients and prospect.",
+      "Practice management tools were generic, expensive, and cloud-only — concerns about data location and billing fit for a small local practice.",
     solution:
-      "Built outreach automation tooling that expands the pipeline without adding headcount. Targeted sequences, follow-ups, and meeting booking running on autopilot.",
+      "A custom dashboard that runs locally, tracks production + employee activity + claims, and fits the practice's real workflow. Data stays on-prem.",
     outcome:
-      "Pipeline grew systematically without new hires. Advisors spend their time in meetings, not chasing outreach.",
-    metric: "3x pipeline growth",
+      "A single place to track production, employee activity, and claims — built to the practice's exact workflow. Data stays on the office network.",
+    metric: "Unified admin",
+    image: "/images/products/dental-admin-login.png",
   },
   {
     id: "retail-vinyl",
