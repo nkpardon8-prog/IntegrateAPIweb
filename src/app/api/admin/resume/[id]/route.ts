@@ -19,8 +19,7 @@ export async function GET(_: Request, ctx: { params: Promise<{ id: string }> }) 
     return new Response('Not found', { status: 404 })
   }
 
-  const key = `${id}.pdf`
-  const stream = await getResumeStream(key)
+  const stream = await getResumeStream(app.resume_key)
   if (!stream) {
     return new Response('Resume missing', { status: 404 })
   }
