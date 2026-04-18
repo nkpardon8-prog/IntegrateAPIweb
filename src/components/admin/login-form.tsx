@@ -46,14 +46,14 @@ export function LoginForm({ serverError }: LoginFormProps) {
   }
 
   const inputClass =
-    'bg-[#0d0d1a] border border-white/[0.08] rounded-lg px-4 py-3 text-[#f0f0f0] placeholder-[#a0a0b0] focus:outline-none focus:border-[#3b82f6] transition-colors w-full'
+    'bg-background border border-border rounded-lg px-4 py-3 text-foreground placeholder-muted focus:outline-none focus:border-accent transition-colors w-full'
 
   return (
-    <div className="bg-[#1a1a2e] border border-white/[0.08] rounded-xl p-6">
-      <h1 className="text-xl font-semibold text-[#f0f0f0] mb-6">Admin login</h1>
+    <div className="bg-card border border-border rounded-xl p-6">
+      <h1 className="text-xl font-semibold text-foreground mb-6">Admin login</h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <div>
-          <label className="block text-sm text-[#a0a0b0] mb-1" htmlFor="email">
+          <label className="block text-sm text-muted mb-1" htmlFor="email">
             Email
           </label>
           <input
@@ -69,7 +69,7 @@ export function LoginForm({ serverError }: LoginFormProps) {
         </div>
 
         <div>
-          <label className="block text-sm text-[#a0a0b0] mb-1" htmlFor="password">
+          <label className="block text-sm text-muted mb-1" htmlFor="password">
             Password
           </label>
           <input
@@ -89,7 +89,7 @@ export function LoginForm({ serverError }: LoginFormProps) {
         <button
           type="submit"
           disabled={loading}
-          className="bg-[#3b82f6] hover:bg-[#2563eb] disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium px-6 py-3 rounded-lg transition-colors w-full"
+          className="bg-accent hover:bg-accent-hover disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium px-6 py-3 rounded-lg transition-colors w-full"
         >
           {loading ? 'Signing in...' : 'Sign in'}
         </button>

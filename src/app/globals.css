@@ -1,12 +1,41 @@
 @import "tailwindcss";
 
-:root {
+:root,
+.dark {
   --background: #121220;
   --card: #1a1a2e;
   --foreground: #f0f0f0;
   --muted: #a0a0b0;
-  --accent: #3b82f6;
+  --accent: 59 130 246;
+  --accent-hover: 37 99 235;
   --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.2);
+  --hero-gradient: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(59,130,246,0.15) 0%, #121220 60%);
+  --navbar-glass: rgba(18, 18, 32, 0.9);
+}
+
+.light {
+  --background: #ffffff;
+  --card: #f6f8fc;
+  --foreground: #0b1220;
+  --muted: #5a6478;
+  --accent: 37 99 235;
+  --accent-hover: 29 78 216;
+  --border: rgba(11, 18, 32, 0.08);
+  --border-strong: rgba(11, 18, 32, 0.2);
+  --hero-gradient: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(37,99,235,0.10) 0%, #ffffff 55%);
+  --navbar-glass: rgba(255, 255, 255, 0.8);
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-accent: rgb(var(--accent));
+  --color-accent-hover: rgb(var(--accent-hover));
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
 }
 
 html {
@@ -14,8 +43,6 @@ html {
 }
 
 body {
-  background-color: #121220;
-  color: #f0f0f0;
   font-family: var(--font-inter), system-ui, sans-serif;
 }
 

@@ -37,8 +37,8 @@ export function ContactForm() {
 
   if (success) {
     return (
-      <div className="bg-[#1a1a2e] border border-white/[0.08] rounded-xl p-6">
-        <p className="text-[#4ade80] text-lg font-medium">
+      <div className="bg-card border border-border rounded-xl p-6">
+        <p className="text-green-400 text-lg font-medium">
           Thanks! We'll be in touch within 24 hours.
         </p>
       </div>
@@ -46,14 +46,14 @@ export function ContactForm() {
   }
 
   const inputClass =
-    'bg-[#0d0d1a] border border-white/[0.08] rounded-lg px-4 py-3 text-[#f0f0f0] placeholder-[#a0a0b0] focus:outline-none focus:border-[#3b82f6] transition-colors w-full'
+    'bg-background border border-border rounded-lg px-4 py-3 text-foreground placeholder-muted focus:outline-none focus:border-accent transition-colors w-full'
 
   return (
-    <div className="bg-[#1a1a2e] border border-white/[0.08] rounded-xl p-6">
+    <div className="bg-card border border-border rounded-xl p-6">
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <div>
-          <label className="block text-sm text-[#a0a0b0] mb-1" htmlFor="name">
-            Name <span className="text-[#3b82f6]">*</span>
+          <label className="block text-sm text-muted mb-1" htmlFor="name">
+            Name <span className="text-accent">*</span>
           </label>
           <input
             id="name"
@@ -67,8 +67,8 @@ export function ContactForm() {
         </div>
 
         <div>
-          <label className="block text-sm text-[#a0a0b0] mb-1" htmlFor="email">
-            Email <span className="text-[#3b82f6]">*</span>
+          <label className="block text-sm text-muted mb-1" htmlFor="email">
+            Email <span className="text-accent">*</span>
           </label>
           <input
             id="email"
@@ -82,7 +82,7 @@ export function ContactForm() {
         </div>
 
         <div>
-          <label className="block text-sm text-[#a0a0b0] mb-1" htmlFor="company">
+          <label className="block text-sm text-muted mb-1" htmlFor="company">
             Company
           </label>
           <input
@@ -96,8 +96,8 @@ export function ContactForm() {
         </div>
 
         <div>
-          <label className="block text-sm text-[#a0a0b0] mb-1" htmlFor="message">
-            Message <span className="text-[#3b82f6]">*</span>
+          <label className="block text-sm text-muted mb-1" htmlFor="message">
+            Message <span className="text-accent">*</span>
           </label>
           <textarea
             id="message"
@@ -115,7 +115,7 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={loading}
-          className="bg-[#3b82f6] hover:bg-[#2563eb] disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium px-6 py-3 rounded-lg transition-colors"
+          className="bg-accent hover:bg-accent-hover disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium px-6 py-3 rounded-lg transition-colors"
         >
           {loading ? 'Sending...' : 'Send Message'}
         </button>

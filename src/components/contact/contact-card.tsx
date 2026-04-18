@@ -8,10 +8,10 @@ interface ContactCardProps {
 
 export function ContactCard({ member }: ContactCardProps) {
   const linkClass =
-    'flex items-center gap-1.5 border border-white/[0.08] hover:border-white/20 rounded-lg px-3 py-2 text-sm text-[#a0a0b0] hover:text-white transition-colors'
+    'flex items-center gap-1.5 border border-border hover:border-border-strong rounded-lg px-3 py-2 text-sm text-muted hover:text-foreground transition-colors'
 
   return (
-    <div className="bg-[#1a1a2e] border border-white/[0.08] rounded-xl p-6 flex flex-col gap-4">
+    <div className="bg-card border border-border rounded-xl p-6 flex flex-col gap-4">
       <div className="flex items-center gap-4">
         <Image
           src={member.photo}
@@ -21,9 +21,9 @@ export function ContactCard({ member }: ContactCardProps) {
           className="rounded-full object-cover"
         />
         <div>
-          <p className="font-bold text-[#f0f0f0]">{member.name}</p>
-          <p className="text-sm text-[#a0a0b0]">{member.title}</p>
-          <p className="text-xs text-[#a0a0b0] mt-0.5">{member.role}</p>
+          <p className="font-bold text-foreground">{member.name}</p>
+          <p className="text-sm text-muted">{member.title}</p>
+          <p className="text-xs text-muted mt-0.5">{member.role}</p>
         </div>
       </div>
 

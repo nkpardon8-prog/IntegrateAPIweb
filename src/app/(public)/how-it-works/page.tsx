@@ -56,18 +56,18 @@ const phases = [
 
 export default function HowItWorksPage() {
   return (
-    <div className="bg-[#121220] text-[#f0f0f0]">
+    <div className="bg-background text-foreground">
       {/* Page header */}
-      <section className="py-20 md:py-28 border-b border-white/[0.06]">
+      <section className="py-20 md:py-28 border-b border-border">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <p className="text-[#3b82f6] text-sm font-medium tracking-widest uppercase mb-4">
+            <p className="text-accent text-sm font-medium tracking-widest uppercase mb-4">
               Process
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
               No risk. No fluff. Just results.
             </h1>
-            <p className="text-xl text-[#a0a0b0] max-w-2xl">
+            <p className="text-xl text-muted max-w-2xl">
               We come in free, learn your business, and tell you where the opportunities are. You decide if you want to build.
             </p>
           </FadeIn>
@@ -81,7 +81,7 @@ export default function HowItWorksPage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Discovery Engagement
             </h2>
-            <p className="text-[#a0a0b0] text-lg mb-16 max-w-2xl">
+            <p className="text-muted text-lg mb-16 max-w-2xl">
               The first week is how we earn the right to work with you.
             </p>
           </FadeIn>
@@ -89,27 +89,27 @@ export default function HowItWorksPage() {
           {/* Steps: vertical on mobile, horizontal on desktop */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-8 relative">
             {/* Connector line on desktop */}
-            <div className="hidden md:block absolute top-12 left-[calc(16.666%+1rem)] right-[calc(16.666%+1rem)] h-px bg-white/[0.08]" />
+            <div className="hidden md:block absolute top-12 left-[calc(16.666%+1rem)] right-[calc(16.666%+1rem)] h-px bg-border" />
 
             {discoverySteps.map((step, i) => (
               <FadeIn key={step.number} delay={i * 0.1}>
                 <div className="relative flex md:flex-col gap-6 md:gap-4 pb-12 md:pb-0">
                   {/* Vertical line on mobile */}
                   {i < discoverySteps.length - 1 && (
-                    <div className="md:hidden absolute left-6 top-14 bottom-0 w-px bg-white/[0.08]" />
+                    <div className="md:hidden absolute left-6 top-14 bottom-0 w-px bg-border" />
                   )}
 
                   {/* Number bubble */}
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#3b82f6]/10 border border-[#3b82f6]/30 flex items-center justify-center z-10">
-                    <span className="text-[#3b82f6] font-bold text-sm">{step.number}</span>
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-accent/10 border border-accent/30 flex items-center justify-center z-10">
+                    <span className="text-accent font-bold text-sm">{step.number}</span>
                   </div>
 
                   <div>
-                    <p className="text-[#3b82f6] text-xs font-medium tracking-widest uppercase mb-1">
+                    <p className="text-accent text-xs font-medium tracking-widest uppercase mb-1">
                       {step.week}
                     </p>
                     <h3 className="text-xl font-bold mb-2">{step.title}</h3>
-                    <p className="text-[#a0a0b0] leading-relaxed">{step.description}</p>
+                    <p className="text-muted leading-relaxed">{step.description}</p>
                   </div>
                 </div>
               </FadeIn>
@@ -118,11 +118,11 @@ export default function HowItWorksPage() {
 
           {/* Callout */}
           <FadeIn delay={0.3}>
-            <div className="mt-16 bg-[#1a1a2e] border border-white/[0.08] rounded-xl p-8 text-center">
-              <p className="text-2xl md:text-3xl font-bold text-[#f0f0f0]">
+            <div className="mt-16 bg-card border border-border rounded-xl p-8 text-center">
+              <p className="text-2xl md:text-3xl font-bold text-foreground">
                 One week on us.
               </p>
-              <p className="text-[#3b82f6] text-xl font-semibold mt-2">
+              <p className="text-accent text-xl font-semibold mt-2">
                 Zero cost. Zero commitment.
               </p>
             </div>
@@ -131,13 +131,13 @@ export default function HowItWorksPage() {
       </section>
 
       {/* Escalation Model */}
-      <section className="py-20 md:py-28 border-t border-white/[0.06]">
+      <section className="py-20 md:py-28 border-t border-border">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               How we grow together
             </h2>
-            <p className="text-[#a0a0b0] text-lg mb-16 max-w-2xl">
+            <p className="text-muted text-lg mb-16 max-w-2xl">
               We never lead with the biggest solution. We earn the right to go deeper.
             </p>
           </FadeIn>
@@ -146,14 +146,14 @@ export default function HowItWorksPage() {
             {phases.map((p, i) => (
               <FadeIn key={p.phase} delay={i * 0.1}>
                 <div
-                  className="bg-[#1a1a2e] border border-white/[0.08] rounded-xl p-6 h-full flex flex-col gap-3"
-                  style={{ borderTopWidth: '3px', borderTopColor: `rgba(59,130,246,${0.4 + i * 0.3})` }}
+                  className="bg-card border border-border rounded-xl p-6 h-full flex flex-col gap-3"
+                  style={{ borderTopWidth: '3px', borderTopColor: `rgb(var(--accent) / ${0.4 + i * 0.3})` }}
                 >
-                  <p className="text-[#3b82f6] text-xs font-medium tracking-widest uppercase">
+                  <p className="text-accent text-xs font-medium tracking-widest uppercase">
                     {p.phase}
                   </p>
                   <h3 className="text-xl font-bold">{p.label}</h3>
-                  <p className="text-[#a0a0b0] leading-relaxed text-sm">{p.description}</p>
+                  <p className="text-muted leading-relaxed text-sm">{p.description}</p>
                 </div>
               </FadeIn>
             ))}
@@ -162,20 +162,20 @@ export default function HowItWorksPage() {
       </section>
 
       {/* Why we work this way */}
-      <section className="py-20 md:py-28 border-t border-white/[0.06]">
+      <section className="py-20 md:py-28 border-t border-border">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <FadeIn>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Why we work this way
               </h2>
-              <p className="text-[#a0a0b0] text-lg leading-relaxed mb-4">
+              <p className="text-muted text-lg leading-relaxed mb-4">
                 Most tech vendors show up with a product and try to fit your business into it. We do the opposite.
               </p>
-              <p className="text-[#a0a0b0] text-lg leading-relaxed mb-4">
+              <p className="text-muted text-lg leading-relaxed mb-4">
                 We earn trust through results, not through contracts. Small wins first. If those land, we go deeper. If they don&apos;t, we haven&apos;t wasted your time or money.
               </p>
-              <p className="text-[#a0a0b0] text-lg leading-relaxed">
+              <p className="text-muted text-lg leading-relaxed">
                 That&apos;s the only way we know how to build a real working relationship.
               </p>
             </FadeIn>
@@ -187,8 +187,8 @@ export default function HowItWorksPage() {
                   'No black-box pricing',
                   'No handoff to a support team after we build',
                 ].map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-[#a0a0b0]">
-                    <Check className="w-5 h-5 text-[#3b82f6] flex-shrink-0 mt-0.5" />
+                  <li key={item} className="flex items-start gap-3 text-muted">
+                    <Check className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -199,18 +199,18 @@ export default function HowItWorksPage() {
       </section>
 
       {/* Bottom CTA */}
-      <section className="py-20 md:py-28 border-t border-white/[0.06]">
+      <section className="py-20 md:py-28 border-t border-border">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               See what one week looks like
             </h2>
-            <p className="text-[#a0a0b0] mb-8 text-lg">
+            <p className="text-muted mb-8 text-lg">
               No commitment. No cost. Just a conversation.
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 bg-[#3b82f6] hover:bg-[#2563eb] text-white font-medium px-6 py-3 rounded-lg transition-colors"
+              className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-medium px-6 py-3 rounded-lg transition-colors"
             >
               Book Your Discovery
               <ArrowRight className="w-4 h-4" />

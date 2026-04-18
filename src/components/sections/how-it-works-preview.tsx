@@ -25,10 +25,10 @@ const steps = [
 
 export function HowItWorksPreview() {
   return (
-    <section className="py-20 md:py-28" style={{ backgroundColor: '#121220' }}>
+    <section className="py-20 md:py-28 bg-background">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn delay={0}>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#f0f0f0] text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground text-center mb-12">
             How it works
           </h2>
         </FadeIn>
@@ -37,28 +37,28 @@ export function HowItWorksPreview() {
             <FadeIn key={step.step} delay={i * 0.1} className="flex-1">
               <div className="flex flex-col md:items-start items-start p-6 relative">
                 {i < steps.length - 1 && (
-                  <div className="hidden md:block absolute right-0 top-8 w-px h-16 bg-white/[0.08]" />
+                  <div className="hidden md:block absolute right-0 top-8 w-px h-16 bg-border" />
                 )}
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="text-4xl font-bold text-[#3b82f6] opacity-40">{step.step}</span>
-                  <span className="text-xs font-medium text-[#a0a0b0] uppercase tracking-wider border border-white/[0.08] rounded px-2 py-1">
+                  <span className="text-4xl font-bold text-accent/40">{step.step}</span>
+                  <span className="text-xs font-medium text-muted uppercase tracking-wider border border-border rounded px-2 py-1">
                     {step.label}
                   </span>
                 </div>
-                <h3 className="text-xl font-semibold text-[#f0f0f0] mb-2">{step.heading}</h3>
-                <p className="text-[#a0a0b0] leading-relaxed">{step.description}</p>
+                <h3 className="text-xl font-semibold text-foreground mb-2">{step.heading}</h3>
+                <p className="text-muted leading-relaxed">{step.description}</p>
               </div>
             </FadeIn>
           ))}
         </div>
         <FadeIn delay={0.3}>
           <div className="mt-10 text-center">
-            <p className="text-2xl font-bold text-[#f0f0f0] mb-6">
+            <p className="text-2xl font-bold text-foreground mb-6">
               One week on us. No commitment.
             </p>
             <Link
               href="/how-it-works"
-              className="inline-flex items-center gap-2 text-[#3b82f6] hover:text-[#2563eb] font-medium transition-colors"
+              className="inline-flex items-center gap-2 text-accent hover:text-accent-hover font-medium transition-colors"
             >
               Learn the full process
               <ArrowRight className="w-4 h-4" />

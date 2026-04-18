@@ -24,18 +24,18 @@ const iconMap: Record<string, LucideIcon> = {
 
 export default function WhatWeDoPage() {
   return (
-    <div className="bg-[#121220] text-[#f0f0f0]">
+    <div className="bg-background text-foreground">
       {/* Page header */}
-      <section className="py-20 md:py-28 border-b border-white/[0.06]">
+      <section className="py-20 md:py-28 border-b border-border">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <p className="text-[#3b82f6] text-sm font-medium tracking-widest uppercase mb-4">
+            <p className="text-accent text-sm font-medium tracking-widest uppercase mb-4">
               Services
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
               What we build
             </h1>
-            <p className="text-xl text-[#a0a0b0] max-w-2xl">
+            <p className="text-xl text-muted max-w-2xl">
               We don&apos;t sell software. We build what your business actually needs.
             </p>
           </FadeIn>
@@ -50,12 +50,12 @@ export default function WhatWeDoPage() {
               const Icon = iconMap[service.icon] ?? Bot
               return (
                 <FadeIn key={service.id} delay={i * 0.05}>
-                  <div className="bg-[#1a1a2e] border border-white/[0.08] rounded-xl p-6 h-full flex flex-col gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-[#3b82f6]/10 flex items-center justify-center flex-shrink-0">
-                      <Icon className="w-5 h-5 text-[#3b82f6]" />
+                  <div className="bg-card border border-border rounded-xl p-6 h-full flex flex-col gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                      <Icon className="w-5 h-5 text-accent" />
                     </div>
                     <h2 className="text-lg font-semibold">{service.title}</h2>
-                    <p className="text-[#a0a0b0] text-sm leading-relaxed flex-1">
+                    <p className="text-muted text-sm leading-relaxed flex-1">
                       {service.description}
                     </p>
                   </div>
@@ -67,18 +67,18 @@ export default function WhatWeDoPage() {
       </section>
 
       {/* Bottom CTA */}
-      <section className="py-20 md:py-28 border-t border-white/[0.06]">
+      <section className="py-20 md:py-28 border-t border-border">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Ready to see what we&apos;d build for you?
             </h2>
-            <p className="text-[#a0a0b0] mb-8 text-lg">
+            <p className="text-muted mb-8 text-lg">
               One week on us. You decide what happens after.
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 bg-[#3b82f6] hover:bg-[#2563eb] text-white font-medium px-6 py-3 rounded-lg transition-colors"
+              className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-medium px-6 py-3 rounded-lg transition-colors"
             >
               Book Your Discovery
               <ArrowRight className="w-4 h-4" />

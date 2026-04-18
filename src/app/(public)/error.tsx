@@ -9,11 +9,11 @@ export default function Error({
 }) {
   return (
     <div className="flex flex-col items-center justify-center min-h-[60vh] px-4 text-center">
-      <h1 className="text-4xl font-bold text-white mb-4">Something went wrong</h1>
-      <p className="text-[#a0a0b0] mb-8">{error.message || 'An unexpected error occurred.'}</p>
+      <h1 className="text-4xl font-bold text-foreground mb-4">Something went wrong</h1>
+      <p className="text-muted mb-8">{error.message || 'An unexpected error occurred.'}</p>
       <button
         onClick={reset}
-        className="bg-[#3b82f6] hover:bg-[#2563eb] text-white font-medium px-6 py-3 rounded-lg transition-colors"
+        className="bg-accent hover:bg-accent-hover text-white font-medium px-6 py-3 rounded-lg transition-colors"
       >
         Try again
       </button>

@@ -16,12 +16,12 @@ const iconMap: Record<string, LucideIcon> = {
 
 export function ServicesOverview() {
   return (
-    <section className="py-20 md:py-28 bg-[#1a1a2e]">
+    <section className="py-20 md:py-28 bg-card">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn delay={0}>
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#f0f0f0] mb-4">What we build</h2>
-            <p className="text-[#a0a0b0] text-lg">Everything your business needs to run on autopilot.</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">What we build</h2>
+            <p className="text-muted text-lg">Everything your business needs to run on autopilot.</p>
           </div>
         </FadeIn>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -29,10 +29,10 @@ export function ServicesOverview() {
             const Icon = iconMap[service.icon]
             return (
               <FadeIn key={service.id} delay={i * 0.05}>
-                <div className="bg-[#121220] border border-white/[0.08] rounded-xl p-6 h-full">
-                  {Icon && <Icon className="w-7 h-7 text-[#3b82f6] mb-3" />}
-                  <h3 className="text-[#f0f0f0] font-semibold mb-2 text-sm sm:text-base">{service.title}</h3>
-                  <p className="text-[#a0a0b0] text-sm leading-relaxed">{service.description}</p>
+                <div className="bg-background border border-border rounded-xl p-6 h-full">
+                  {Icon && <Icon className="w-7 h-7 text-accent mb-3" />}
+                  <h3 className="text-foreground font-semibold mb-2 text-sm sm:text-base">{service.title}</h3>
+                  <p className="text-muted text-sm leading-relaxed">{service.description}</p>
                 </div>
               </FadeIn>
             )
@@ -42,7 +42,7 @@ export function ServicesOverview() {
           <div className="text-center mt-10">
             <Link
               href="/what-we-do"
-              className="inline-flex items-center gap-2 text-[#3b82f6] hover:text-[#2563eb] font-medium transition-colors"
+              className="inline-flex items-center gap-2 text-accent hover:text-accent-hover font-medium transition-colors"
             >
               See everything we do
               <ArrowRight className="w-4 h-4" />

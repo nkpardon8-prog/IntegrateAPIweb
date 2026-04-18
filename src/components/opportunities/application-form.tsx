@@ -92,8 +92,8 @@ export function ApplicationForm({ roleSlug }: ApplicationFormProps) {
 
   if (success) {
     return (
-      <div className="bg-[#1a1a2e] border border-white/[0.08] rounded-xl p-6">
-        <p className="text-[#4ade80] text-lg font-medium">
+      <div className="bg-card border border-border rounded-xl p-6">
+        <p className="text-green-400 text-lg font-medium">
           Thanks! Your application is in. We&apos;ll be in touch if there&apos;s a fit.
         </p>
       </div>
@@ -101,15 +101,15 @@ export function ApplicationForm({ roleSlug }: ApplicationFormProps) {
   }
 
   const inputClass =
-    'bg-[#0d0d1a] border border-white/[0.08] rounded-lg px-4 py-3 text-[#f0f0f0] placeholder-[#a0a0b0] focus:outline-none focus:border-[#3b82f6] transition-colors w-full'
+    'bg-background border border-border rounded-lg px-4 py-3 text-foreground placeholder-muted focus:outline-none focus:border-accent transition-colors w-full'
 
   return (
-    <div className="bg-[#1a1a2e] border border-white/[0.08] rounded-xl p-6">
+    <div className="bg-card border border-border rounded-xl p-6">
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm text-[#a0a0b0] mb-1" htmlFor="first_name">
-              First name <span className="text-[#3b82f6]">*</span>
+            <label className="block text-sm text-muted mb-1" htmlFor="first_name">
+              First name <span className="text-accent">*</span>
             </label>
             <input
               id="first_name"
@@ -123,8 +123,8 @@ export function ApplicationForm({ roleSlug }: ApplicationFormProps) {
             />
           </div>
           <div>
-            <label className="block text-sm text-[#a0a0b0] mb-1" htmlFor="last_name">
-              Last name <span className="text-[#3b82f6]">*</span>
+            <label className="block text-sm text-muted mb-1" htmlFor="last_name">
+              Last name <span className="text-accent">*</span>
             </label>
             <input
               id="last_name"
@@ -141,8 +141,8 @@ export function ApplicationForm({ roleSlug }: ApplicationFormProps) {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm text-[#a0a0b0] mb-1" htmlFor="email">
-              Email <span className="text-[#3b82f6]">*</span>
+            <label className="block text-sm text-muted mb-1" htmlFor="email">
+              Email <span className="text-accent">*</span>
             </label>
             <input
               id="email"
@@ -155,8 +155,8 @@ export function ApplicationForm({ roleSlug }: ApplicationFormProps) {
             />
           </div>
           <div>
-            <label className="block text-sm text-[#a0a0b0] mb-1" htmlFor="phone">
-              Phone <span className="text-[#3b82f6]">*</span>
+            <label className="block text-sm text-muted mb-1" htmlFor="phone">
+              Phone <span className="text-accent">*</span>
             </label>
             <input
               id="phone"
@@ -174,8 +174,8 @@ export function ApplicationForm({ roleSlug }: ApplicationFormProps) {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm text-[#a0a0b0] mb-1" htmlFor="school">
-              School <span className="text-[#3b82f6]">*</span>
+            <label className="block text-sm text-muted mb-1" htmlFor="school">
+              School <span className="text-accent">*</span>
             </label>
             <input
               id="school"
@@ -189,8 +189,8 @@ export function ApplicationForm({ roleSlug }: ApplicationFormProps) {
             />
           </div>
           <div>
-            <label className="block text-sm text-[#a0a0b0] mb-1" htmlFor="year">
-              Year <span className="text-[#3b82f6]">*</span>
+            <label className="block text-sm text-muted mb-1" htmlFor="year">
+              Year <span className="text-accent">*</span>
             </label>
             <select
               id="year"
@@ -213,7 +213,7 @@ export function ApplicationForm({ roleSlug }: ApplicationFormProps) {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm text-[#a0a0b0] mb-1" htmlFor="linkedin_url">
+            <label className="block text-sm text-muted mb-1" htmlFor="linkedin_url">
               LinkedIn URL
             </label>
             <input
@@ -226,8 +226,8 @@ export function ApplicationForm({ roleSlug }: ApplicationFormProps) {
             />
           </div>
           <div>
-            <label className="block text-sm text-[#a0a0b0] mb-1" htmlFor="availability_hours">
-              Availability (hours / week) <span className="text-[#3b82f6]">*</span>
+            <label className="block text-sm text-muted mb-1" htmlFor="availability_hours">
+              Availability (hours / week) <span className="text-accent">*</span>
             </label>
             <input
               id="availability_hours"
@@ -245,8 +245,8 @@ export function ApplicationForm({ roleSlug }: ApplicationFormProps) {
         </div>
 
         <div>
-          <label className="block text-sm text-[#a0a0b0] mb-1" htmlFor="why_this_role">
-            Why this role? <span className="text-[#3b82f6]">*</span>
+          <label className="block text-sm text-muted mb-1" htmlFor="why_this_role">
+            Why this role? <span className="text-accent">*</span>
           </label>
           <textarea
             id="why_this_role"
@@ -259,12 +259,12 @@ export function ApplicationForm({ roleSlug }: ApplicationFormProps) {
             placeholder="A few sentences on what drew you to this role."
             className={inputClass}
           />
-          <p className="text-xs text-[#a0a0b0] mt-1 text-right">{whyThisRole.length} / 300</p>
+          <p className="text-xs text-muted mt-1 text-right">{whyThisRole.length} / 300</p>
         </div>
 
         <div>
-          <label className="block text-sm text-[#a0a0b0] mb-1" htmlFor="experience_story">
-            Tell us about a time you learned something fast or handled a hard conversation. <span className="text-[#3b82f6]">*</span>
+          <label className="block text-sm text-muted mb-1" htmlFor="experience_story">
+            Tell us about a time you learned something fast or handled a hard conversation. <span className="text-accent">*</span>
           </label>
           <textarea
             id="experience_story"
@@ -277,12 +277,12 @@ export function ApplicationForm({ roleSlug }: ApplicationFormProps) {
             placeholder="Briefly: the situation, what you did, what happened."
             className={inputClass}
           />
-          <p className="text-xs text-[#a0a0b0] mt-1 text-right">{experienceStory.length} / 500</p>
+          <p className="text-xs text-muted mt-1 text-right">{experienceStory.length} / 500</p>
         </div>
 
         <div>
-          <label className="block text-sm text-[#a0a0b0] mb-1" htmlFor="resume">
-            Resume (PDF, under 3MB) <span className="text-[#3b82f6]">*</span>
+          <label className="block text-sm text-muted mb-1" htmlFor="resume">
+            Resume (PDF, under 3MB) <span className="text-accent">*</span>
           </label>
           <input
             id="resume"
@@ -290,7 +290,7 @@ export function ApplicationForm({ roleSlug }: ApplicationFormProps) {
             required
             accept="application/pdf"
             onChange={e => setResume(e.target.files?.[0] ?? null)}
-            className="block w-full text-sm text-[#a0a0b0] file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-[#3b82f6] file:text-white hover:file:bg-[#2563eb] file:cursor-pointer"
+            className="block w-full text-sm text-muted file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-accent file:text-white hover:file:bg-accent-hover file:cursor-pointer"
           />
         </div>
 
@@ -299,7 +299,7 @@ export function ApplicationForm({ roleSlug }: ApplicationFormProps) {
         <button
           type="submit"
           disabled={loading}
-          className="bg-[#3b82f6] hover:bg-[#2563eb] disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium px-6 py-3 rounded-lg transition-colors"
+          className="bg-accent hover:bg-accent-hover disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium px-6 py-3 rounded-lg transition-colors"
         >
           {loading ? 'Sending...' : 'Submit application'}
         </button>

@@ -6,18 +6,18 @@ export default function OpportunitiesPage() {
   const published = jobs.filter(j => j.published)
 
   return (
-    <div className="bg-[#121220] text-[#f0f0f0] min-h-screen">
+    <div className="bg-background text-foreground min-h-screen">
       {/* Page header */}
-      <section className="py-20 md:py-28 border-b border-white/[0.06]">
+      <section className="py-20 md:py-28 border-b border-border">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <p className="text-[#3b82f6] text-sm font-medium tracking-widest uppercase mb-4">
+            <p className="text-accent text-sm font-medium tracking-widest uppercase mb-4">
               Opportunities
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
               Join an early team building real AI for real businesses.
             </h1>
-            <p className="text-xl text-[#a0a0b0] max-w-2xl">
+            <p className="text-xl text-muted max-w-2xl">
               A small set of roles built for people who want a front-row seat to how AI is actually deployed inside small and mid-sized companies.
             </p>
           </FadeIn>
@@ -29,9 +29,9 @@ export default function OpportunitiesPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {published.length === 0 ? (
             <FadeIn>
-              <div className="bg-[#1a1a2e] border border-dashed border-white/[0.12] rounded-xl p-8 text-center">
-                <p className="text-[#f0f0f0] text-xl font-semibold mb-2">No open roles right now.</p>
-                <p className="text-[#a0a0b0] max-w-2xl mx-auto">
+              <div className="bg-card border border-dashed border-border-strong rounded-xl p-8 text-center">
+                <p className="text-foreground text-xl font-semibold mb-2">No open roles right now.</p>
+                <p className="text-muted max-w-2xl mx-auto">
                   Check back soon. We hire in waves.
                 </p>
               </div>

@@ -21,20 +21,20 @@ const points = [
 
 export function PainPoints() {
   return (
-    <section className="py-20 md:py-28" style={{ backgroundColor: '#121220' }}>
+    <section className="py-20 md:py-28 bg-background">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn delay={0}>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#f0f0f0] text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground text-center mb-12">
             Sound familiar?
           </h2>
         </FadeIn>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {points.map((point, i) => (
             <FadeIn key={point.heading} delay={i * 0.1}>
-              <div className="bg-[#1a1a2e] border border-white/[0.08] rounded-xl p-6 h-full">
-                <point.icon className="w-8 h-8 text-[#3b82f6] mb-4" />
-                <h3 className="text-lg font-semibold text-[#f0f0f0] mb-2">{point.heading}</h3>
-                <p className="text-[#a0a0b0] leading-relaxed">{point.description}</p>
+              <div className="bg-card border border-border rounded-xl p-6 h-full">
+                <point.icon className="w-8 h-8 text-accent mb-4" />
+                <h3 className="text-lg font-semibold text-foreground mb-2">{point.heading}</h3>
+                <p className="text-muted leading-relaxed">{point.description}</p>
               </div>
             </FadeIn>
           ))}

@@ -8,7 +8,7 @@ export default async function AdminApplicationsPage() {
 
   if (rows.length === 0) {
     return (
-      <div className="bg-[#1a1a2e] border border-white/[0.08] rounded-xl p-8 text-center text-[#a0a0b0]">
+      <div className="bg-card border border-border rounded-xl p-8 text-center text-muted">
         No applications yet.
       </div>
     )

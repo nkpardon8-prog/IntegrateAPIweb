@@ -22,7 +22,7 @@ const STATUS_BADGE: Record<ApplicationStatus, string> = {
   interviewing: 'bg-purple-500/20 text-purple-300',
   offer: 'bg-teal-500/20 text-teal-300',
   hired: 'bg-green-500/20 text-green-300',
-  rejected: 'bg-white/10 text-[#a0a0b0]',
+  rejected: 'bg-foreground/10 text-muted',
 }
 
 const dateFormatter = new Intl.DateTimeFormat('en-US', {
@@ -52,12 +52,12 @@ export function ApplicationsTable({ rows }: ApplicationsTableProps) {
   }, [rows, status])
 
   const selectClass =
-    'bg-[#0d0d1a] border border-white/[0.08] rounded-lg px-4 py-2 text-[#f0f0f0] focus:outline-none focus:border-[#3b82f6] transition-colors'
+    'bg-background border border-border rounded-lg px-4 py-2 text-foreground focus:outline-none focus:border-accent transition-colors'
 
   return (
     <div className="flex flex-col gap-4">
       <div className="flex items-center gap-3">
-        <label htmlFor="status-filter" className="text-sm text-[#a0a0b0]">
+        <label htmlFor="status-filter" className="text-sm text-muted">
           Status
         </label>
         <select
@@ -72,15 +72,15 @@ export function ApplicationsTable({ rows }: ApplicationsTableProps) {
             </option>
           ))}
         </select>
-        <span className="text-sm text-[#a0a0b0] ml-auto">
+        <span className="text-sm text-muted ml-auto">
           {filtered.length} {filtered.length === 1 ? 'result' : 'results'}
         </span>
       </div>
 
-      <div className="bg-[#1a1a2e] border border-white/[0.08] rounded-xl overflow-hidden">
+      <div className="bg-card border border-border rounded-xl overflow-hidden">
         <table className="w-full text-left">
           <thead>
-            <tr className="text-[#a0a0b0] text-xs uppercase tracking-wide">
+            <tr className="text-muted text-xs uppercase tracking-wide">
               <th className="px-4 py-3 font-medium">Date</th>
               <th className="px-4 py-3 font-medium">Name</th>
               <th className="px-4 py-3 font-medium">Role</th>
@@ -93,7 +93,7 @@ export function ApplicationsTable({ rows }: ApplicationsTableProps) {
               <tr>
                 <td
                   colSpan={5}
-                  className="px-4 py-8 text-center text-[#a0a0b0] text-sm"
+                  className="px-4 py-8 text-center text-muted text-sm"
                 >
                   No applications match this filter.
                 </td>
@@ -103,15 +103,15 @@ export function ApplicationsTable({ rows }: ApplicationsTableProps) {
                 <tr
                   key={row.id}
                   onClick={() => router.push(`/admin/applications/${row.id}`)}
-                  className="border-t border-white/[0.06] hover:bg-white/[0.03] cursor-pointer transition-colors"
+                  className="border-t border-border hover:bg-foreground/[0.03] cursor-pointer transition-colors"
                 >
-                  <td className="px-4 py-3 text-sm text-[#f0f0f0]">
+                  <td className="px-4 py-3 text-sm text-foreground">
                     {formatDate(row.created_at)}
                   </td>
-                  <td className="px-4 py-3 text-sm text-[#f0f0f0]">
+                  <td className="px-4 py-3 text-sm text-foreground">
                     {row.first_name} {row.last_name}
                   </td>
-                  <td className="px-4 py-3 text-sm text-[#a0a0b0]">
+                  <td className="px-4 py-3 text-sm text-muted">
                     {row.role_slug}
                   </td>
                   <td className="px-4 py-3">
@@ -121,7 +121,7 @@ export function ApplicationsTable({ rows }: ApplicationsTableProps) {
                       {row.status}
                     </span>
                   </td>
-                  <td className="px-4 py-3 text-right text-[#a0a0b0]">→</td>
+                  <td className="px-4 py-3 text-right text-muted">→</td>
                 </tr>
               ))
             )}

@@ -10,7 +10,7 @@ export default function AdminApplicationsLayout({
         <form action="/api/admin/logout" method="POST">
           <button
             type="submit"
-            className="text-[#a0a0b0] hover:text-white text-sm"
+            className="text-muted hover:text-foreground text-sm"
           >
             Log out
           </button>

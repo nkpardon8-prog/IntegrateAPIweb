@@ -98,7 +98,7 @@ export function ChatWidget() {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-[#3b82f6] hover:bg-[#2563eb] text-white font-medium px-4 py-3 rounded-full shadow-lg transition-colors"
+          className="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-medium px-4 py-3 rounded-full shadow-lg transition-colors"
         >
           <MessageSquare size={18} />
           <span className="text-sm">Chat with us</span>
@@ -106,23 +106,23 @@ export function ChatWidget() {
       )}
 
       {isOpen && (
-        <div className="fixed bottom-6 right-4 md:right-6 z-50 w-[calc(100vw-32px)] md:w-[380px] h-[70vh] md:h-[520px] flex flex-col rounded-xl overflow-hidden shadow-2xl border border-white/[0.08] transition-all">
-          <div className="flex items-center justify-between px-4 py-3 bg-[#1a1a2e] border-b border-white/[0.08]">
+        <div className="fixed bottom-6 right-4 md:right-6 z-50 w-[calc(100vw-32px)] md:w-[380px] h-[70vh] md:h-[520px] flex flex-col rounded-xl overflow-hidden shadow-2xl border border-border transition-all">
+          <div className="flex items-center justify-between px-4 py-3 bg-card border-b border-border">
             <div className="flex items-center gap-2">
-              <MessageSquare size={16} className="text-[#3b82f6]" />
-              <span className="text-sm font-medium text-[#f0f0f0]">IntegrateAPI Bot</span>
+              <MessageSquare size={16} className="text-accent" />
+              <span className="text-sm font-medium text-foreground">IntegrateAPI Bot</span>
             </div>
             <div className="flex items-center gap-1">
               <button
                 onClick={() => setIsOpen(false)}
-                className="p-1.5 text-[#a0a0b0] hover:text-white transition-colors rounded"
+                className="p-1.5 text-muted hover:text-foreground transition-colors rounded"
                 aria-label="Minimize"
               >
                 <Minimize2 size={15} />
               </button>
               <button
                 onClick={() => setIsOpen(false)}
-                className="p-1.5 text-[#a0a0b0] hover:text-white transition-colors rounded"
+                className="p-1.5 text-muted hover:text-foreground transition-colors rounded"
                 aria-label="Close"
               >
                 <X size={15} />
@@ -130,26 +130,26 @@ export function ChatWidget() {
             </div>
           </div>
 
-          <div className="flex-1 overflow-y-auto bg-[#0d0d1a] px-4 py-4 flex flex-col gap-3">
+          <div className="flex-1 overflow-y-auto bg-background px-4 py-4 flex flex-col gap-3">
             {messages.map(m => (
               <div
                 key={m.id}
                 className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 {m.role === 'assistant' && m.content === '' && showTypingIndicator ? (
-                  <div className="bg-[#1a1a2e] text-[#f0f0f0] rounded-xl rounded-bl-sm px-3 py-2 max-w-[80%]">
+                  <div className="bg-card text-foreground rounded-xl rounded-bl-sm px-3 py-2 max-w-[80%]">
                     <span className="flex gap-1 items-center h-5">
-                      <span className="w-1.5 h-1.5 bg-[#a0a0b0] rounded-full animate-bounce [animation-delay:0ms]" />
-                      <span className="w-1.5 h-1.5 bg-[#a0a0b0] rounded-full animate-bounce [animation-delay:150ms]" />
-                      <span className="w-1.5 h-1.5 bg-[#a0a0b0] rounded-full animate-bounce [animation-delay:300ms]" />
+                      <span className="w-1.5 h-1.5 bg-muted rounded-full animate-bounce [animation-delay:0ms]" />
+                      <span className="w-1.5 h-1.5 bg-muted rounded-full animate-bounce [animation-delay:150ms]" />
+                      <span className="w-1.5 h-1.5 bg-muted rounded-full animate-bounce [animation-delay:300ms]" />
                     </span>
                   </div>
                 ) : (
                   <div
                     className={`text-sm px-3 py-2 max-w-[80%] ${
                       m.role === 'user'
-                        ? 'bg-[#3b82f6] text-white rounded-xl rounded-br-sm'
-                        : 'bg-[#1a1a2e] text-[#f0f0f0] rounded-xl rounded-bl-sm'
+                        ? 'bg-accent text-white rounded-xl rounded-br-sm'
+                        : 'bg-card text-foreground rounded-xl rounded-bl-sm'
                     }`}
                   >
                     {m.content}
@@ -160,19 +160,19 @@ export function ChatWidget() {
             <div ref={messagesEndRef} />
           </div>
 
-          <div className="px-3 py-3 bg-[#1a1a2e] border-t border-white/[0.08] flex gap-2">
+          <div className="px-3 py-3 bg-card border-t border-border flex gap-2">
             <input
               type="text"
               value={input}
               onChange={e => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
               placeholder="Ask us anything..."
-              className="flex-1 bg-[#0d0d1a] border border-white/[0.08] rounded-lg px-3 py-2 text-sm text-[#f0f0f0] placeholder-[#a0a0b0] focus:outline-none focus:border-[#3b82f6] transition-colors"
+              className="flex-1 bg-background border border-border rounded-lg px-3 py-2 text-sm text-foreground placeholder-muted focus:outline-none focus:border-accent transition-colors"
             />
             <button
               onClick={sendMessage}
               disabled={isLoading || !input.trim()}
-              className="bg-[#3b82f6] hover:bg-[#2563eb] disabled:opacity-50 disabled:cursor-not-allowed text-white p-2 rounded-lg transition-colors"
+              className="bg-accent hover:bg-accent-hover disabled:opacity-50 disabled:cursor-not-allowed text-white p-2 rounded-lg transition-colors"
               aria-label="Send"
             >
               <Send size={16} />
