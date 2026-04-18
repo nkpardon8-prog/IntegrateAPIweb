@@ -59,7 +59,7 @@ export function Navbar() {
       </div>
 
       {mobileOpen && (
-        <div className="fixed inset-0 top-16 z-40 bg-background md:hidden">
+        <div className="fixed inset-x-0 top-16 h-[calc(100vh-4rem)] z-40 bg-background md:hidden">
           <div className="flex flex-col items-center justify-center gap-8 pt-20">
             {navLinks.map((link) => (
               <Link
