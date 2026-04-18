@@ -1,9 +1,10 @@
 import { sendLeadEmail } from '@/lib/resend'
 import { rateLimit } from '@/lib/rate-limit'
+import { clientIp } from '@/lib/ip'
 
 export async function POST(req: Request) {
-  const ip = req.headers.get('x-forwarded-for') || req.headers.get('x-real-ip') || 'unknown'
-  if (!rateLimit(ip, 5, 60000)) {
+  const ip = clientIp(req)
+  if (!rateLimit(`contact:${ip}`, 5, 60000)) {
     return Response.json({ error: 'Too many requests. Please try again in a minute.' }, { status: 429 })
   }
 

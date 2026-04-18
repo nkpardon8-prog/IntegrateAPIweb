@@ -20,7 +20,7 @@ export function Hero() {
           </FadeIn>
           <FadeIn delay={0.1}>
             <p className="text-lg sm:text-xl text-[#a0a0b0] leading-relaxed mb-10 max-w-2xl">
-              We show up, learn how your business runs, and build the tools that remove the parts slowing you down. No jargon. No fluff. Just things that work.
+              We come in free, learn your business, and tell you where the opportunities are. You decide if you want to build.
             </p>
           </FadeIn>
           <FadeIn delay={0.2}>
@@ -29,7 +29,7 @@ export function Hero() {
                 href="/contact"
                 className="bg-[#3b82f6] hover:bg-[#2563eb] text-white font-medium px-6 py-3 rounded-lg transition-colors text-center"
               >
-                Book Your Free Discovery
+                Book Your Discovery
               </Link>
               <Link
                 href="/how-it-works"

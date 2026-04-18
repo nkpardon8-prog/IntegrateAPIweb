@@ -5,9 +5,9 @@ export interface FaqItem {
 
 export const faq: FaqItem[] = [
   {
-    question: "What does the free two-week discovery look like?",
+    question: "What does the free discovery look like?",
     answer:
-      "Week one, we show up and learn your business. We observe operations, talk to your team, and figure out where AI and automation would have the most impact. Week two, we build a custom implementation plan focused on saving you time, reducing stress, and making more money. At the end, we present it. If you like it, we move forward. If not, we part ways. No charge either way.",
+      "One week on us. We show up, observe how your business actually runs, talk to your team, and figure out where AI, software, and automation would have the most impact. Then we tell you exactly what we see and what we'd build. If you like it, we move forward. If not, you still walk away with a plan. No charge either way.",
   },
   {
     question: "How much does this cost?",
@@ -23,7 +23,7 @@ export const faq: FaqItem[] = [
   {
     question: "What industries do you work with?",
     answer:
-      "Service-based businesses with real operational complexity. Property management, financial advisory, retail, hospitality, professional services. If your business runs on relationships and process, we can probably help.",
+      "Businesses that off-the-shelf software was never really built for. Property management, construction, wealth management, retail, law firms, dental offices, and more. If your business runs on relationships and process, we can probably help.",
   },
   {
     question: "How quickly can you deliver results?",

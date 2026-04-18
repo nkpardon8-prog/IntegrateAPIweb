@@ -5,21 +5,21 @@ import { FadeIn } from '@/components/motion/fade-in'
 const steps = [
   {
     step: '01',
-    label: 'Week 1',
+    label: 'Day 1',
     heading: 'We show up.',
-    description: 'We spend time inside your business. Learn how it actually runs. No charge.',
+    description: 'We spend time inside your business. Watch how it actually runs. On us.',
   },
   {
     step: '02',
-    label: 'Week 2',
-    heading: 'We build the plan.',
-    description: 'Custom implementation plan: save time, reduce stress, make more money. Still no charge.',
+    label: 'End of Week',
+    heading: 'We tell you where the opportunities are.',
+    description: 'A clear read on where AI, software, and automation would change things. No pitch deck.',
   },
   {
     step: '03',
     label: 'Decision',
     heading: 'You decide.',
-    description: 'We present the plan. You say yes or no. No strings either way.',
+    description: 'Build with us or don\u2019t. Either way, you leave with a plan.',
   },
 ]
 
@@ -54,7 +54,7 @@ export function HowItWorksPreview() {
         <FadeIn delay={0.3}>
           <div className="mt-10 text-center">
             <p className="text-2xl font-bold text-[#f0f0f0] mb-6">
-              No charge for the first 2 weeks.
+              One week on us. No commitment.
             </p>
             <Link
               href="/how-it-works"

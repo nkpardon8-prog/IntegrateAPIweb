@@ -5,7 +5,7 @@ import { CalEmbed } from '@/components/contact/cal-embed'
 import { team } from '@/data/team'
 
 export const metadata: Metadata = {
-  title: 'Contact IntegrateAPI | Book a Free Discovery',
+  title: 'Contact IntegrateAPI | Book Your Discovery',
 }
 
 export default function ContactPage() {
@@ -16,7 +16,7 @@ export default function ContactPage() {
           Ready to stop drowning in admin work?
         </h1>
         <p className="text-[#a0a0b0] text-lg max-w-2xl">
-          Two weeks. No charge. No commitment. We learn your business, build a plan, and you decide.
+          One week on us. We come in, watch how you work, and tell you exactly where AI and tech can change things. Then you decide.
         </p>
       </div>
 
@@ -25,7 +25,7 @@ export default function ContactPage() {
           <ContactForm />
         </div>
         <div className="md:w-[40%]">
-          <p className="text-center text-[#a0a0b0] text-sm mb-4">— or book directly —</p>
+          <p className="text-center text-[#a0a0b0] text-sm mb-4">or book directly</p>
           <CalEmbed />
         </div>
       </div>

@@ -66,7 +66,7 @@ export default function AboutPage() {
             </FadeIn>
             <FadeIn delay={0.1}>
               <p className="text-lg text-[#a0a0b0] leading-relaxed">
-                The first two weeks are on us. We learn your business, find where the problems are, and build a plan. You decide what happens after.
+                The first week is on us. We come in, learn your business, find where the problems are, and tell you where the opportunities are. You decide what happens after.
               </p>
             </FadeIn>
             <FadeIn delay={0.15}>
@@ -198,7 +198,7 @@ export default function AboutPage() {
               Work with us
             </h2>
             <p className="text-[#a0a0b0] mb-8 text-lg">
-              Two weeks, no charge. Find out what we&apos;d build for your business.
+              One week on us. Find out where the opportunities are in your business.
             </p>
             <Link
               href="/contact"

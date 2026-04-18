@@ -10,51 +10,75 @@ export interface CaseStudy {
 
 export const caseStudies: CaseStudy[] = [
   {
-    id: "record-store",
-    industry: "Record Store",
-    badge: "Retail",
-    problem:
-      "Managing inventory across in-store, online, and network sales channels meant re-entering data three times and constantly double-selling items.",
-    solution:
-      "Connected inventory dashboard with QR label printing and a live online storefront. One item entry drives all channels. When something sells, it de-lists everywhere automatically.",
-    outcome:
-      "Zero double-sells. Staff saves hours daily on manual data entry. Owner sees real-time inventory across all channels.",
-    metric: "0 double-sells",
-  },
-  {
-    id: "property-mgmt-crm",
-    industry: "Property Management Company",
+    id: "property-management",
+    industry: "Property Management",
     badge: "Property Mgmt",
     problem:
-      "Running outreach, managing tenants, and tracking marketing campaigns across disconnected tools. Lost a previous vendor to a GoHighLevel provider.",
+      "Tenant communications, maintenance requests, lease tracking, and lead outreach were scattered across email, texts, spreadsheets, and three disconnected tools. Nothing talked to anything else.",
     solution:
-      "Built a full custom CRM and marketing automation platform. Centralized tenant management, automated outreach sequences, and campaign tracking in one system.",
+      "Built a custom property management and CRM platform. Tenant communications, maintenance workflows, lease tracking, and automated outreach sequences all live in one system built around the way the team actually works.",
     outcome:
-      "Won the project over an established GoHighLevel provider. All operations consolidated into one platform.",
+      "Operations run from one dashboard. Outreach runs 24/7. Time that used to go into managing software now goes into managing properties.",
     metric: "1 unified platform",
   },
   {
-    id: "property-mgmt-leads",
-    industry: "Property Management Firm",
-    badge: "Property Mgmt",
+    id: "construction",
+    industry: "Construction",
+    badge: "Construction",
     problem:
-      "Spending hours manually finding leads, running outreach, and trying to book property management contracts.",
+      "Job costing, crew scheduling, and change orders lived on paper, whiteboards, and spreadsheets. The office spent more time chasing information than running projects.",
     solution:
-      "Automated the entire lead generation pipeline. Data scraping, outreach sequences, follow-ups, and call booking all running on autopilot.",
+      "Built project management and job costing software tailored to the company's workflow. Materials, labor, schedules, and change orders tracked together, tied to live budget and margin.",
     outcome:
-      "Client takes the calls. Everything before that moment is automated.",
-    metric: "10+ booked calls/month",
+      "Margins visible in real time. Billing cycles shortened. Admin hours spent on tracking dropped meaningfully.",
+    metric: "Live job visibility",
   },
   {
-    id: "financial-advisory",
-    industry: "Financial Advisory Firm",
-    badge: "Finance",
+    id: "wealth-management",
+    industry: "Wealth Management",
+    badge: "Financial Advisory",
     problem:
-      "Limited capacity for client outreach meant missing opportunities to grow the advisory practice.",
+      "Limited capacity for client outreach meant missed opportunities to grow the book. Advisors were stretched thin and couldn't both serve clients and prospect.",
     solution:
-      "Built outreach automation tools that expand the client pipeline without adding headcount.",
+      "Built outreach automation tooling that expands the pipeline without adding headcount. Targeted sequences, follow-ups, and meeting booking running on autopilot.",
     outcome:
-      "Expanding client pipeline systematically without hiring additional staff.",
+      "Pipeline grew systematically without new hires. Advisors spend their time in meetings, not chasing outreach.",
     metric: "3x pipeline growth",
+  },
+  {
+    id: "retail-vinyl",
+    industry: "Retail (Vinyl Records)",
+    badge: "Retail",
+    problem:
+      "Inventory lived in a spreadsheet, an online storefront, and in the store itself, none of them in sync. Staff re-entered every record three times and still got it wrong.",
+    solution:
+      "Connected inventory dashboard with QR label printing and a live online storefront. One entry drives every channel. When something sells, it de-lists everywhere automatically.",
+    outcome:
+      "Hours of manual data entry removed from every week. Owner sees real-time stock across channels. Staff focus on customers, not spreadsheets.",
+    metric: "Hours saved weekly",
+  },
+  {
+    id: "law-firm",
+    industry: "Law Firms",
+    badge: "Legal",
+    problem:
+      "Client intake, matter tracking, document generation, and billing were split across disconnected tools and email. Every new matter meant significant manual setup.",
+    solution:
+      "Built a client intake and matter management system with automated document generation, deadline tracking, and billing summaries, scoped to how the firm actually practices.",
+    outcome:
+      "New matter setup time cut dramatically. Attorneys spend more time on cases, less on admin. Missed deadlines become harder to hit.",
+    metric: "Faster intake",
+  },
+  {
+    id: "dental",
+    industry: "Dental Offices",
+    badge: "Healthcare",
+    problem:
+      "Appointment reminders, recall campaigns, and post-treatment follow-ups were manual. Work fell through the cracks between visits, and the front desk was stuck on the phone.",
+    solution:
+      "Built automated patient communication workflows: reminders, recall notices, post-treatment follow-ups. All personalized per patient, running without staff input.",
+    outcome:
+      "No-shows dropped. Recall runs on autopilot. Front desk focuses on patients in the office, not chasing ones who aren't.",
+    metric: "Fewer no-shows",
   },
 ]

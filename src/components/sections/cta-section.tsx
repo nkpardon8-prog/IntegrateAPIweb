@@ -9,9 +9,9 @@ interface CTASectionProps {
 }
 
 export function CTASection({
-  title = 'Two weeks. No charge. No commitment.',
-  subtitle = "We learn your business and build a custom plan. If you like it, we move forward. If you don't, we part ways.",
-  buttonText = 'Book Your Free Discovery',
+  title = 'One week on us.',
+  subtitle = 'We come in, watch how you work, and tell you exactly where AI and tech can change things. Then you decide.',
+  buttonText = 'Book Your Discovery',
   buttonHref = '/contact',
 }: CTASectionProps) {
   return (

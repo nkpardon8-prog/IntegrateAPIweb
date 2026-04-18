@@ -74,13 +74,13 @@ export default function WhatWeDoPage() {
               Ready to see what we&apos;d build for you?
             </h2>
             <p className="text-[#a0a0b0] mb-8 text-lg">
-              The first two weeks are on us.
+              One week on us. You decide what happens after.
             </p>
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 bg-[#3b82f6] hover:bg-[#2563eb] text-white font-medium px-6 py-3 rounded-lg transition-colors"
             >
-              Start with 2 free weeks
+              Book Your Discovery
               <ArrowRight className="w-4 h-4" />
             </Link>
           </FadeIn>

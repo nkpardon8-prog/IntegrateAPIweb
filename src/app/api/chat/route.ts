@@ -3,6 +3,7 @@ import { createOpenRouter } from '@openrouter/ai-sdk-provider'
 import { systemPrompt, knowledgeBase } from '@/lib/chatbot-knowledge'
 import { sendLeadEmail } from '@/lib/resend'
 import { rateLimit } from '@/lib/rate-limit'
+import { clientIp } from '@/lib/ip'
 import { z } from 'zod'
 
 const openrouter = createOpenRouter({
@@ -10,8 +11,8 @@ const openrouter = createOpenRouter({
 })
 
 export async function POST(req: Request) {
-  const ip = req.headers.get('x-forwarded-for') || req.headers.get('x-real-ip') || 'unknown'
-  if (!rateLimit(ip, 20, 60000)) {
+  const ip = clientIp(req)
+  if (!rateLimit(`chat:${ip}`, 20, 60000)) {
     return new Response('Too many requests', { status: 429 })
   }
 

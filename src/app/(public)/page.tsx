@@ -1,4 +1,5 @@
 import { Hero } from '@/components/sections/hero'
+import { UnderservedIndustries } from '@/components/sections/underserved-industries'
 import { StatsBar } from '@/components/sections/stats-bar'
 import { PainPoints } from '@/components/sections/pain-points'
 import { ServicesOverview } from '@/components/sections/services-overview'
@@ -11,6 +12,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <UnderservedIndustries />
       <StatsBar />
       <PainPoints />
       <ServicesOverview />

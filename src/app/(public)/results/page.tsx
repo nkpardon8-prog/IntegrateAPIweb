@@ -7,7 +7,7 @@ import { FadeIn } from '@/components/motion/fade-in'
 export const metadata: Metadata = {
   title: 'Results | IntegrateAPI',
   description:
-    'Real outcomes from real engagements. No vague testimonials. No inflated numbers.',
+    'Industries we\u2019ve served. Real problems, real builds, real outcomes. No company names.',
 }
 
 export default function ResultsPage() {
@@ -21,10 +21,10 @@ export default function ResultsPage() {
               Results
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-              What happens when businesses actually do this.
+              Industries most vendors ignore.
             </h1>
             <p className="text-xl text-[#a0a0b0] max-w-2xl">
-              No vague testimonials. No inflated numbers. Just real outcomes from real engagements.
+              These are sectors where off-the-shelf software was never really built for how the work actually runs. No company names. Just what the problem looked like, what we built, and what changed.
             </p>
           </FadeIn>
         </div>
@@ -42,13 +42,13 @@ export default function ResultsPage() {
                     <span className="bg-[#3b82f6]/20 text-[#3b82f6] text-xs px-3 py-1 rounded-full font-medium">
                       {cs.badge}
                     </span>
-                    <span className="text-3xl md:text-4xl font-bold text-[#f0f0f0]">
+                    <span className="text-2xl md:text-3xl font-bold text-[#f0f0f0]">
                       {cs.metric}
                     </span>
                   </div>
 
                   {/* Industry */}
-                  <p className="text-[#a0a0b0] text-sm font-medium mb-6">{cs.industry}</p>
+                  <p className="text-[#f0f0f0] text-xl font-semibold mb-6">{cs.industry}</p>
 
                   {/* Problem / Solution / Outcome */}
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -66,7 +66,7 @@ export default function ResultsPage() {
                     </div>
                     <div>
                       <p className="text-xs font-medium tracking-widest uppercase text-[#3b82f6] mb-2">
-                        The Result
+                        What Changed
                       </p>
                       <p className="text-[#a0a0b0] text-sm leading-relaxed">{cs.outcome}</p>
                     </div>
@@ -74,7 +74,36 @@ export default function ResultsPage() {
                 </div>
               </FadeIn>
             ))}
+
+            {/* And more card */}
+            <FadeIn delay={caseStudies.length * 0.08}>
+              <div className="bg-[#1a1a2e] border border-dashed border-white/[0.12] rounded-xl p-8 text-center">
+                <p className="text-[#f0f0f0] text-xl font-semibold mb-2">
+                  And more.
+                </p>
+                <p className="text-[#a0a0b0] max-w-2xl mx-auto">
+                  If your industry isn&apos;t on this list, that&apos;s usually a sign it needs the most work. Ask us.
+                </p>
+              </div>
+            </FadeIn>
           </div>
+        </div>
+      </section>
+
+      {/* Underserved industries reinforcement */}
+      <section className="py-20 md:py-28 border-t border-white/[0.06] bg-[#1a1a2e]">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
+              Most of these sectors have had almost no real tech investment built for them.
+            </h2>
+            <p className="text-[#a0a0b0] text-lg leading-relaxed mb-4">
+              The software most SMBs run on was built for someone else. A generic CRM, a generic scheduler, a generic accounting tool. Configured, not built. Bent to fit.
+            </p>
+            <p className="text-[#a0a0b0] text-lg leading-relaxed">
+              We build for how the business actually works. Existing tools when they fit. Custom software when they don&apos;t. AI agents where they make the work disappear. And we stay as the business changes.
+            </p>
+          </FadeIn>
         </div>
       </section>
 
@@ -86,13 +115,13 @@ export default function ResultsPage() {
               Ready to be the next one?
             </h2>
             <p className="text-[#a0a0b0] mb-8 text-lg">
-              The first two weeks cost you nothing.
+              One week on us. We come in, watch how you work, and tell you where the opportunities are.
             </p>
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 bg-[#3b82f6] hover:bg-[#2563eb] text-white font-medium px-6 py-3 rounded-lg transition-colors"
             >
-              Start the conversation
+              Book Your Discovery
               <ArrowRight className="w-4 h-4" />
             </Link>
           </FadeIn>

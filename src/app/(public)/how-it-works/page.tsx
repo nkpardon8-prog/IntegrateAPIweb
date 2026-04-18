@@ -12,24 +12,24 @@ export const metadata: Metadata = {
 const discoverySteps = [
   {
     number: '01',
-    week: 'Week 1',
+    week: 'Day 1',
     title: 'We show up.',
     description:
-      'We observe your operations, talk to your team, and find where AI and automation would hit hardest. No charge.',
+      'We observe your operations, talk to your team, and find where AI and automation would hit hardest. On us.',
   },
   {
     number: '02',
-    week: 'Week 2',
-    title: 'We build the plan.',
+    week: 'End of the Week',
+    title: 'We tell you what we see.',
     description:
-      'We write a custom plan focused on saving you time, reducing stress, and cutting costs. Still no charge.',
+      'A clear read on where software, AI agents, and automation would change things. Off-the-shelf tools, custom builds, or both.',
   },
   {
     number: '03',
-    week: 'End of Week 2',
+    week: 'Decision',
     title: 'You decide.',
     description:
-      'We present, you choose. If yes, we move forward with clear pricing. If no, we part ways. No strings.',
+      'Build with us or don\u2019t. If yes, we move forward with clear pricing. If no, you still leave with a plan.',
   },
 ]
 
@@ -44,7 +44,7 @@ const phases = [
     phase: 'Phase 2',
     label: 'Build Trust',
     description:
-      'With results on the board, we step into medium work — CRM, campaign systems, automated pipelines.',
+      'With results on the board, we step into medium work: CRM, campaign systems, automated pipelines.',
   },
   {
     phase: 'Phase 3',
@@ -68,7 +68,7 @@ export default function HowItWorksPage() {
               No risk. No fluff. Just results.
             </h1>
             <p className="text-xl text-[#a0a0b0] max-w-2xl">
-              We remove every barrier to saying yes. If what we build doesn&apos;t work for you, you pay nothing.
+              We come in free, learn your business, and tell you where the opportunities are. You decide if you want to build.
             </p>
           </FadeIn>
         </div>
@@ -82,11 +82,11 @@ export default function HowItWorksPage() {
               Discovery Engagement
             </h2>
             <p className="text-[#a0a0b0] text-lg mb-16 max-w-2xl">
-              The first two weeks are how we earn the right to work with you.
+              The first week is how we earn the right to work with you.
             </p>
           </FadeIn>
 
-          {/* Steps — vertical on mobile, horizontal on desktop */}
+          {/* Steps: vertical on mobile, horizontal on desktop */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-8 relative">
             {/* Connector line on desktop */}
             <div className="hidden md:block absolute top-12 left-[calc(16.666%+1rem)] right-[calc(16.666%+1rem)] h-px bg-white/[0.08]" />
@@ -120,7 +120,7 @@ export default function HowItWorksPage() {
           <FadeIn delay={0.3}>
             <div className="mt-16 bg-[#1a1a2e] border border-white/[0.08] rounded-xl p-8 text-center">
               <p className="text-2xl md:text-3xl font-bold text-[#f0f0f0]">
-                The entire discovery is on us.
+                One week on us.
               </p>
               <p className="text-[#3b82f6] text-xl font-semibold mt-2">
                 Zero cost. Zero commitment.
@@ -203,7 +203,7 @@ export default function HowItWorksPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              See what two weeks looks like
+              See what one week looks like
             </h2>
             <p className="text-[#a0a0b0] mb-8 text-lg">
               No commitment. No cost. Just a conversation.
@@ -212,7 +212,7 @@ export default function HowItWorksPage() {
               href="/contact"
               className="inline-flex items-center gap-2 bg-[#3b82f6] hover:bg-[#2563eb] text-white font-medium px-6 py-3 rounded-lg transition-colors"
             >
-              Book your free discovery
+              Book Your Discovery
               <ArrowRight className="w-4 h-4" />
             </Link>
           </FadeIn>
