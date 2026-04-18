@@ -1,12 +1,17 @@
 'use client'
 
 import { useTheme } from 'next-themes'
+import { useEffect, useState } from 'react'
 import { Sun, Moon } from 'lucide-react'
 
 export function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
 
-  if (!resolvedTheme) {
+  // eslint-disable-next-line react-hooks/set-state-in-effect -- next-themes SSR-safe mount guard; server renders placeholder, client flips post-hydration
+  useEffect(() => setMounted(true), [])
+
+  if (!mounted) {
     return <div className="w-9 h-9" aria-hidden />
   }
 
