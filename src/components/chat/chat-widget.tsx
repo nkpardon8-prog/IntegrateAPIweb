@@ -1,7 +1,9 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useSyncExternalStore } from 'react'
+import { usePathname } from 'next/navigation'
 import { MessageSquare, X, Send, Minimize2 } from 'lucide-react'
+import { chatStore, getServerSnapshot } from './chat-store'
 
 interface Message {
   id: string
@@ -10,7 +12,8 @@ interface Message {
 }
 
 export function ChatWidget() {
-  const [isOpen, setIsOpen] = useState(false)
+  const isOpen = useSyncExternalStore(chatStore.subscribe, chatStore.getIsOpen, getServerSnapshot)
+  const pathname = usePathname()
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 'welcome',
@@ -46,6 +49,7 @@ export function ChatWidget() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           messages: allMessages.map(m => ({ role: m.role, content: m.content })),
+          currentPath: pathname,
         }),
       })
 
@@ -97,7 +101,7 @@ export function ChatWidget() {
     <>
       {!isOpen && (
         <button
-          onClick={() => setIsOpen(true)}
+          onClick={() => chatStore.open()}
           className="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-medium px-4 py-3 rounded-full shadow-lg transition-colors"
         >
           <MessageSquare size={18} />
@@ -114,14 +118,14 @@ export function ChatWidget() {
             </div>
             <div className="flex items-center gap-1">
               <button
-                onClick={() => setIsOpen(false)}
+                onClick={() => chatStore.close()}
                 className="p-1.5 text-muted hover:text-foreground transition-colors rounded"
                 aria-label="Minimize"
               >
                 <Minimize2 size={15} />
               </button>
               <button
-                onClick={() => setIsOpen(false)}
+                onClick={() => chatStore.close()}
                 className="p-1.5 text-muted hover:text-foreground transition-colors rounded"
                 aria-label="Close"
               >

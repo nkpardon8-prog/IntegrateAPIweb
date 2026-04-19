@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { FadeIn } from '@/components/motion/fade-in'
 import { BrowserFrame } from '@/components/graphics/browser-frame'
+import { ChatTriggerButton } from '@/components/chat/chat-trigger-button'
 import heroImage from '../../../public/images/products/connect-crm-dashboard.png'
 
 export function Hero() {
@@ -37,6 +38,7 @@ export function Hero() {
                 >
                   See How It Works
                 </Link>
+                <ChatTriggerButton variant="secondary" label="Ask the bot" />
               </div>
             </FadeIn>
           </div>

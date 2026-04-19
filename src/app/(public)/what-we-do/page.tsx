@@ -4,6 +4,7 @@ import { Bot, Code2, TrendingUp, Cog, Phone, Globe, GraduationCap, RefreshCw, Ar
 import { services } from '@/data/services'
 import { FadeIn } from '@/components/motion/fade-in'
 import { AgentAnatomySection } from '@/components/sections/agent-anatomy-section'
+import { PageBottomCTA } from '@/components/sections/page-bottom-cta'
 import type { LucideIcon } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -95,26 +96,11 @@ export default function WhatWeDoPage() {
         </div>
       </section>
 
-      {/* Bottom CTA */}
-      <section className="py-20 md:py-28 border-t border-border">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <FadeIn>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Ready to see what we&apos;d build for you?
-            </h2>
-            <p className="text-muted mb-8 text-lg">
-              One week on us. You decide what happens after.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-medium px-6 py-3 rounded-lg transition-colors"
-            >
-              Book Your Discovery
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </FadeIn>
-        </div>
-      </section>
+      <PageBottomCTA
+        title="Ready to see what we'd build for you?"
+        subtitle="One week on us. You decide what happens after."
+        primaryLabel="Book Your Discovery"
+      />
     </div>
   )
 }

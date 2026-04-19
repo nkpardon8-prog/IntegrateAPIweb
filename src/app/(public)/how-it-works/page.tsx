@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
-import { ArrowRight, Check } from 'lucide-react'
+import { Check } from 'lucide-react'
 import { FadeIn } from '@/components/motion/fade-in'
+import { PageBottomCTA } from '@/components/sections/page-bottom-cta'
 
 export const metadata: Metadata = {
   title: 'How It Works | IntegrateAPI',
@@ -198,26 +198,11 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
-      {/* Bottom CTA */}
-      <section className="py-20 md:py-28 border-t border-border">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <FadeIn>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              See what one week looks like
-            </h2>
-            <p className="text-muted mb-8 text-lg">
-              No commitment. No cost. Just a conversation.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-medium px-6 py-3 rounded-lg transition-colors"
-            >
-              Book Your Discovery
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </FadeIn>
-        </div>
-      </section>
+      <PageBottomCTA
+        title="See what one week looks like"
+        subtitle="No commitment. No cost. Just a conversation."
+        primaryLabel="Book Your Discovery"
+      />
     </div>
   )
 }

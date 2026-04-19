@@ -1,9 +1,8 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight } from 'lucide-react'
 import { caseStudies } from '@/data/case-studies'
 import { FadeIn } from '@/components/motion/fade-in'
+import { PageBottomCTA } from '@/components/sections/page-bottom-cta'
 
 export const metadata: Metadata = {
   title: 'Results | IntegrateAPI',
@@ -119,26 +118,11 @@ export default function ResultsPage() {
         </div>
       </section>
 
-      {/* Bottom CTA */}
-      <section className="py-20 md:py-28 border-t border-border">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <FadeIn>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Ready to be the next one?
-            </h2>
-            <p className="text-muted mb-8 text-lg">
-              One week on us. We come in, watch how you work, and tell you where the opportunities are.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-medium px-6 py-3 rounded-lg transition-colors"
-            >
-              Book Your Discovery
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </FadeIn>
-        </div>
-      </section>
+      <PageBottomCTA
+        title="Ready to be the next one?"
+        subtitle="One week on us. We come in, watch how you work, and tell you where the opportunities are."
+        primaryLabel="Book Your Discovery"
+      />
     </div>
   )
 }

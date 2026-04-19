@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import {
   Lock,
   ScrollText,
@@ -8,10 +7,10 @@ import {
   ShieldCheck,
   Globe,
   Check,
-  ArrowRight,
   type LucideIcon,
 } from 'lucide-react'
 import { FadeIn } from '@/components/motion/fade-in'
+import { PageBottomCTA } from '@/components/sections/page-bottom-cta'
 
 export const metadata: Metadata = {
   title: 'Compliance | IntegrateAPI',
@@ -175,26 +174,11 @@ export default function CompliancePage() {
         </div>
       </section>
 
-      {/* Bottom CTA */}
-      <section className="py-20 md:py-28 border-t border-border">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <FadeIn>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Have a compliance requirement we need to meet?
-            </h2>
-            <p className="text-muted mb-8 text-lg">
-              Bring it to the discovery call. We&apos;ll tell you what&apos;s buildable inside it.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-medium px-6 py-3 rounded-lg transition-colors"
-            >
-              Book Your Discovery
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </FadeIn>
-        </div>
-      </section>
+      <PageBottomCTA
+        title="Have a compliance requirement we need to meet?"
+        subtitle="Bring it to the discovery call. We'll tell you what's buildable inside it."
+        primaryLabel="Book Your Discovery"
+      />
     </div>
   )
 }
